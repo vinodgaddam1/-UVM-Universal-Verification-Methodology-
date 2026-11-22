@@ -31,7 +31,7 @@
 # ⏳ UVM Phases
 UVM provides predefined phases to control testbench execution.
 
-# <img width="1080" height="1337" alt="WhatsApp Image 2026-11-22 at 6 29 37 PM" src="https://github.com/user-attachments/assets/66f4c9a4-433b-4629-8d58-1dd6bcff81eb" />
+# <img width="1080" height="1336" alt="WhatsApp Image 2026-11-22 at 6 47 02 PM" src="https://github.com/user-attachments/assets/97fe1cb4-9689-4d7b-8b31-08083493ae9b" />
 
 🔨 Build-time phases:
 - build_phase
