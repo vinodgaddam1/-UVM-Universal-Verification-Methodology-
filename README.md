@@ -189,6 +189,7 @@ Suppose you have:
 - mem_tx_debug → Derived class.
 - 
 2.Instance Override
+
   2️⃣ Instance Override
 What is Instance Override?
 Instance Override replaces a class only at a particular instance path.
