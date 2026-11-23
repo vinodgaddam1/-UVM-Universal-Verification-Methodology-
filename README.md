@@ -51,6 +51,7 @@ UVM provides predefined phases to control testbench execution.
 What is UVM Factory?
 The UVM Factory is a mechanism used to create UVM objects and components dynamically.
 
+
 Instead of creating a class directly using new(), we use:
 
 "type_id::create()"
@@ -69,6 +70,8 @@ Instead of creating a class directly using new(), we use:
 
 What is Factory Registration?
 Factory registration means informing the UVM Factory that a particular class is available for Factory-based creation.
+
+<img width="1080" height="1080" alt="WhatsApp Image 2026-11-23 at 5 51 44 PM" src="https://github.com/user-attachments/assets/029c81b9-8ee5-40a8-b5e8-46d963f5ee1c" />
 
 UVM provides two types:
 
@@ -172,6 +175,23 @@ Type Override means replacing one class with another class throughout Factory-ba
 | 8 | `print()` | Prints Factory configuration |
 | 9 | `debug_create_by_type()` | Debugs Factory creation by type |
 | 10 | `debug_create_by_name()` | Debugs Factory creation by name |
+
+# 🚀Type Override vs Instance Override:
+
+1.Type Override
+
+1️⃣ Type Override
+What is Type Override?
+Type Override replaces the original class with another class for all matching Factory creation requests.
+Example
+Suppose you have:
+- mem_tx → Base class.
+- mem_tx_debug → Derived class.
+- 
+2.Instance Override
+  2️⃣ Instance Override
+What is Instance Override?
+Instance Override replaces a class only at a particular instance path.
 
 
 
