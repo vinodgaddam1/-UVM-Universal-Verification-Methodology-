@@ -200,11 +200,15 @@ UVM doesn't automatically know when your testbench has finished generating and p
 <img width="1080" height="1302" alt="WhatsApp Image 2026-11-24 at 6 14 50 PM" src="https://github.com/user-attachments/assets/6a8125bd-8416-47e1-908f-00462bd891f7" />
 
 
+
+
 🧑‍💻 Syntax
 Raise objection:
+
 phase.raise_objection(this);
 
 Drop objection:
+
 phase.drop_objection(this);
 
 
@@ -219,6 +223,7 @@ phase.drop_objection(this);
 Drain time in UVM is the extra time UVM waits after all objections have been dropped, before ending a phase.
 
 Syntax:
+
 phase.get_objection().set_drain_time(component, drain_time);
 
 Remember:
