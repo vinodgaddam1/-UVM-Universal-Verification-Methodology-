@@ -183,16 +183,60 @@ Type Override means replacing one class with another class throughout Factory-ba
 1️⃣ Type Override
 What is Type Override?
 Type Override replaces the original class with another class for all matching Factory creation requests.
-Example
-Suppose you have:
-- mem_tx → Base class.
-- mem_tx_debug → Derived class.
-- 
+
+ 
 2.Instance Override
 
   2️⃣ Instance Override
 What is Instance Override?
 Instance Override replaces a class only at a particular instance path.
+
+# 🛑 Objections in UVM
+In UVM, objections are used to control the execution of simulation phases, mainly the run_phase.
+
+🎯 Why do we need objections?
+UVM doesn't automatically know when your testbench has finished generating and processing transactions.
+
+<img width="1080" height="1302" alt="WhatsApp Image 2026-11-24 at 6 14 50 PM" src="https://github.com/user-attachments/assets/6a8125bd-8416-47e1-908f-00462bd891f7" />
+
+
+🧑‍💻 Syntax
+Raise objection:
+phase.raise_objection(this);
+
+Drop objection:
+phase.drop_objection(this);
+
+
+| Step | Code | Meaning |
+|---|---|---|
+| 1 | `raise_objection()` | Prevents the phase from ending |
+| 2 | `#100` | Simulation continues for 100 time units |
+| 3 | `drop_objection()` | Signals that this component/test is finished |
+| 4 | UVM | Ends `run_phase` when objections are no longer outstanding |
+
+# 🔄 Drain Time in UVM
+Drain time in UVM is the extra time UVM waits after all objections have been dropped, before ending a phase.
+
+Syntax:
+phase.get_objection().set_drain_time(component, drain_time);
+
+Remember:
+- raise_objection() → Keeps the phase alive.
+- drop_objection() → Releases the objection.
+- set_drain_time() → Adds extra waiting time after objections reach zero.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
