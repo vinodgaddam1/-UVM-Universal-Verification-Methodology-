@@ -157,9 +157,13 @@ TYPE NAME = mem_tx
 
 
 # Type Override
+
+
 This is one of the most important concepts in UVM Factory.
 
 1. What is Type Override?
+
+
 Type Override means replacing one class with another class throughout Factory-based creation requests for the original class.
 
 
@@ -181,6 +185,7 @@ Type Override means replacing one class with another class throughout Factory-ba
 1.Type Override
 
 1️⃣ Type Override
+
 What is Type Override?
 Type Override replaces the original class with another class for all matching Factory creation requests.
 
@@ -232,13 +237,51 @@ Remember:
 - set_drain_time() → Adds extra waiting time after objections reach zero.
 
 
+# 🧩 UVM Object (uvm_object)
 
 
+In UVM, uvm_object is the base class for creating lightweight objects such as transactions, sequence items, and sequences.It provides built-in functionality like copying, comparing, printing, recording, and factory support (when combined with the appropriate macros).
 
 
+<img width="1080" height="1440" alt="Picsart_26-11-25_01-21-01-643" src="https://github.com/user-attachments/assets/3b36f8a2-1a36-41db-945a-33f04992ad9a" />
+
+1. What is uvm_object?
+uvm_object is the parent class from which many UVM objects are derived.
 
 
+Examples:
+- uvm_sequence_item → Derived from uvm_object.
+- uvm_sequence → Derived from uvm_object.
 
+| Code | Description |
+|---|---|
+| `class my_object extends uvm_object;` | Creates a class derived from `uvm_object`. |
+| `` `uvm_object_utils(my_object) `` | Registers the class with the UVM factory. |
+| `function new(...)` | Constructor used to create the object. |
+| `super.new(name);` | Calls the parent class constructor. |
+
+
+| Method | Purpose |
+|---|---|
+| `print()` | Displays the object's properties. |
+| `copy()` | Copies data from one object to another. |
+| `clone()` | Creates a new object and copies data into it. |
+| `compare()` | Compares two objects. |
+| `pack()` | Converts object fields into a packed representation. |
+| `unpack()` | Restores data from a packed representation. |
+| `get_name()` | Returns the object's name. |
+| `get_type_name()` | Returns the object's type name. |
+
+
+Remember:
+- 🧩 uvm_object = Data and reusable objects.
+ 
+- 🏗️ uvm_component = Testbench structure and behavior.
+
+- 🎲 uvm_sequence_item = Transaction object.
+
+ 
+- 🔄 uvm_sequence = Generates and sends transactions.
 
 
 
